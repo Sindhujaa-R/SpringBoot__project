@@ -9,5 +9,5 @@ public class CertificateServiceSindhujaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CertificateServiceSindhujaApplication.class, args);
 	}
-
 }
+

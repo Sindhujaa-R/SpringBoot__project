@@ -1,11 +1,17 @@
 package com.tnsif.certificateservice;
+
+import java.sql.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 @Entity
 public class Certificate
 {
 	@Id
+
 	@Column(name="certid")
 	private int certid;
 	@Column(name="studname")
@@ -19,7 +25,8 @@ public class Certificate
 	@Column(name="gender")
 	private char gender;
 	@Column(name="dateofissue")
-	private int dateofissue;
+	@Temporal(TemporalType.DATE)
+	private Date dateofissue;
 	public int getCertid() {
 		return certid;
 	}
@@ -57,17 +64,17 @@ public class Certificate
 		this.gender = gender;
 	}
 	
-	public int getDateofissue() {
+	public Date getDateofissue() {
 		return dateofissue;
 	}
-	public void setDateofissue(int dateofissue) {
+	public void setDateofissue(Date dateofissue) {
 		this.dateofissue = dateofissue;
 	}
 	public Certificate() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Certificate(int certid, String studname, String dept, String grade, int year, char gender, int dateofissue) {
+	public Certificate(int certid, String studname, String dept, String grade, int year, char gender, Date dateofissue) {
 		super();
 		this.certid = certid;
 		this.studname = studname;
